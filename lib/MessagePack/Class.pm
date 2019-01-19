@@ -156,9 +156,11 @@ role MessagePack::Class {
 
     multi _unmarshal(Any:D $data, Int) {
         if $data ~~ Int {
-            return Int($data)
+            Int($data)
         }
-        panic($data, Int)
+        else {
+            panic($data, Int)
+        }
     }
 
     multi _unmarshal(Any:D $data, Rat) {
@@ -167,19 +169,21 @@ role MessagePack::Class {
                 panic($data, Rat);
             }
         }
-        return Rat($data);
+        Rat($data);
     }
 
     multi _unmarshal(Any:D $data, Numeric) {
         if $data ~~ Numeric {
-            return Num($data)
+            Num($data)
         }
-        panic($data, Numeric)
+        else {
+            panic($data, Numeric)
+        }
     }
 
     multi _unmarshal($data, Str) {
         if $data ~~ Stringy {
-            return Str($data)
+            Str($data)
         }
         else {
             Str;
@@ -192,7 +196,7 @@ role MessagePack::Class {
                 panic($data, Bool);
             }
         }
-        return Bool($data);
+        Bool($data);
     }
 
     multi _unmarshal(Any:D $data, Any $x) {
@@ -212,7 +216,7 @@ role MessagePack::Class {
                 }
             }
         }
-        return $x.new(|%args)
+        $x.new(|%args)
     }
 
     multi _unmarshal($data, @x) {
@@ -221,7 +225,7 @@ role MessagePack::Class {
             my $type = @x.of =:= Any ?? $value.WHAT !! @x.of;
             @ret.append(_unmarshal($value, $type));
         }
-        return @ret;
+        @ret;
     }
 
     multi _unmarshal($data, %x) {
@@ -230,11 +234,11 @@ role MessagePack::Class {
             my $type = %x.of =:= Any ?? $value.WHAT !! %x.of;
             %ret{$key} = _unmarshal($value, $type);
         }
-        return %ret;
+        %ret;
     }
 
     multi _unmarshal(Any:D $data, Mu) {
-        return $data
+        $data
     }
 
     method to-messagepack(--> Blob) {
