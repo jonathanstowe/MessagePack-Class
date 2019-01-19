@@ -286,7 +286,7 @@ role MessagePack::Class {
         $value;
     }
 
-    multi sub _marshal(%obj, Bool :$skip-null) returns Hash {
+    multi sub _marshal(%obj, Bool :$skip-null --> Hash ) {
         my %ret;
 
         for %obj.kv -> $key, $value {
@@ -296,7 +296,7 @@ role MessagePack::Class {
         %ret;
     }
 
-    multi sub _marshal(@obj, Bool :$skip-null) returns Array {
+    multi sub _marshal(@obj, Bool :$skip-null --> Array ) {
         my @ret;
 
         for @obj -> $item {
@@ -305,7 +305,7 @@ role MessagePack::Class {
         @ret;
     }
 
-    multi sub _marshal(Mu $obj, Bool :$skip-null) returns Hash {
+    multi sub _marshal(Mu $obj, Bool :$skip-null --> Hash ) {
         my %ret;
         my %local-attrs =  $obj.^attributes(:local).map({ $_.name => $_.package });
         for $obj.^attributes -> $attr {
@@ -329,7 +329,7 @@ role MessagePack::Class {
         %ret;
     }
 
-    sub serialise-ok(Attribute $attr, $value, Bool $skip-null ) returns Bool {
+    sub serialise-ok(Attribute $attr, $value, Bool $skip-null  --> Bool ) {
         my $rc = True;
         if $skip-null || ( $attr ~~ SkipNull ) {
             if not $value.defined {
