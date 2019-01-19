@@ -6,7 +6,7 @@
     "source": "https://github.com/jonathanstowe/MessagePack-Class.git",
     "bugtracker": "https://github.com/jonathanstowe/MessagePack-Class/issues"
   },
-  "perl": "6.c",
+  "perl": "6.*",
   "resources": [
     
   ],
