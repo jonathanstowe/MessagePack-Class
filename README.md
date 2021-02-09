@@ -1,13 +1,13 @@
 # MessagePack::Class
 
-Serialize/Deserialize Perl 6 classes to/from MessagePack blobs
+Serialize/Deserialize Raku classes to/from MessagePack blobs
 
-[![Build Status](https://travis-ci.org/jonathanstowe/MessagePack-Class.svg?branch=master)](https://travis-ci.org/jonathanstowe/MessagePack-Class)
+![Build Status](https://github.com/jonathanstowe/Tinky/workflows/CI/badge.svg)
 
 
 ## Synopsis
 
-```perl6
+```raku
 
 use MessagePack::Class;
 
@@ -30,8 +30,8 @@ my MyClass $obj = MyClass.from-messagepack($pack);
 is particularly efficient for transmission over a network or file storage.
 
 This module provides a role that allows for the direct serialization of
-a Perl 6 object to a MessagePack binary blob and the deserialization of
-that blob back to a Perl 6 object of the same type with the same attribute
+a Raku object to a MessagePack binary blob and the deserialization of
+that blob back to a Raku object of the same type with the same attribute
 values.
 
 Under the hood it uses [Data::MessagePack](https://github.com/pierre-vigier/Perl6-Data-MessagePack)
@@ -50,7 +50,6 @@ A named method supplied to ```packed-by``` will be called on the object to be se
 without any arguments and should return a value suitable for serialization, and a method
 supplied to ```unpacked-by``` will be called on the type object with the value to be
 deserialized as a single positional argument and should return an object of the type.
-
 
 So for instance if one had a class with an attribute of type Version one might do:
 
@@ -82,8 +81,7 @@ in that language.
 
 ## Installation
 
-Assuming you have a working Rakudo Perl 6 installation the you should be able
-to install this with ```zef``` :
+Assuming you have a working Rakudo installation the you should be able to install this with ```zef``` :
 
     zef install MessagePack::Class
 
@@ -91,8 +89,7 @@ to install this with ```zef``` :
 
     zef install .
 
-Though I can't see any reason this shouldn't work with any other installer that
-may come along in the future.
+Though I can't see any reason this shouldn't work with any other installer that may come along in the future.
 
 ## Support
 
@@ -104,4 +101,4 @@ prefer a pull request with tests if you can do that.
 
 This is free software. Please see the [LICENCE](LICENCE) file in this repository.
 
-© Jonathan Stowe 2017, 2019
+© Jonathan Stowe 2017 - 2021

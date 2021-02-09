@@ -4,7 +4,7 @@ use v6;
 
 =head1 NAME
 
-MessagePack::Class - Serialize/Deserialize Perl 6 classes to/from MessagePack blobs
+MessagePack::Class - Serialize/Deserialize Raku classes to/from MessagePack blobs
 
 =head1 SYNOPSIS
 
@@ -32,7 +32,7 @@ is particularly efficient for transmission over a network or file storage.
 
 This module provides a role that allows for the direct serialization of
 a Perl 6 object to a MessagePack binary blob and the deserialization
-of that blob back to a Perl 6 object of the same type with the same
+of that blob back to a Raku object of the same type with the same
 attribute values.
 
 Under the hood it uses
@@ -343,4 +343,4 @@ role MessagePack::Class {
         $rc;
     }
 }
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab shiftwidth=4 ft=raku
