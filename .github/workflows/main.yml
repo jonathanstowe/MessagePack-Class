@@ -19,6 +19,9 @@ jobs:
     - name: Raku version
       run: raku -v
 
+    - name: Hard install Data::MessagePack
+      run:  zef install -v --debug https://github.com/pierre-vigier/Perl6-Data-MessagePack.git
+
     - name: Install dependencies
       run: zef install --deps-only --/test --test-depends .
 

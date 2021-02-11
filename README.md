@@ -91,6 +91,10 @@ Assuming you have a working Rakudo installation the you should be able to instal
 
 Though I can't see any reason this shouldn't work with any other installer that may come along in the future.
 
+If it reports that is having trouble installing the dependency, you can do:
+
+    zef install -v --debug https://github.com/pierre-vigier/Perl6-Data-MessagePack.git
+
 ## Support
 
 If you find a problem with this module or have a suggestion please report at
