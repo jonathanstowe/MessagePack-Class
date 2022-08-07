@@ -1,38 +1,37 @@
 {
-  "name": "MessagePack::Class",
-  "version": "0.0.3",
-  "auth": "github:jonathanstowe",
-  "api": "1.9",
-  "description": "Serialize/Deserialize Raku classes to/from MessagePack blobs",
-  "source-url": "https://github.com/jonathanstowe/MessagePack-Class.git",
-  "support": {
-    "email": "jns+gh@gellyfish.co.uk",
-    "source": "https://github.com/jonathanstowe/MessagePack-Class.git",
-    "bugtracker": "https://github.com/jonathanstowe/MessagePack-Class/issues"
-  },
-  "perl": "6.*",
-  "raku": "6.*",
-  "resources": [
-  ],
-  "build-depends": [
-  ],
-  "depends": [
-    "Data::MessagePack"
-  ],
-  "test-depends": [
-  ],
+  "auth": "zef:jonathanstowe",
   "tags": [
     "messagepack",
     "message",
     "serialization",
     "data"
   ],
-  "license": "Artistic-2.0",
-  "provides": {
-    "MessagePack::Class": "lib/MessagePack/Class.pm"
-  },
   "authors": [
     "Jonathan Stowe <jns+gh@gellyfish.co.uk>"
   ],
-  "meta-version": "1"
+  "test-depends": [
+  ],
+  "name": "MessagePack::Class",
+  "resources": [
+  ],
+  "description": "Serialize/Deserialize Raku classes to/from MessagePack blobs",
+  "api": "1.9",
+  "provides": {
+    "MessagePack::Class": "lib/MessagePack/Class.pm"
+  },
+  "support": {
+    "email": "jns+gh@gellyfish.co.uk",
+    "source": "https://github.com/jonathanstowe/MessagePack-Class.git",
+    "bugtracker": "https://github.com/jonathanstowe/MessagePack-Class/issues"
+  },
+  "build-depends": [
+  ],
+  "raku": "6.*",
+  "source-url": "https://github.com/jonathanstowe/MessagePack-Class.git",
+  "meta-version": "1",
+  "license": "Artistic-2.0",
+  "version": "0.0.4",
+  "depends": [
+    "Data::MessagePack"
+  ]
 }
