@@ -17,7 +17,7 @@
   "description": "Serialize/Deserialize Raku classes to/from MessagePack blobs",
   "api": "1.9",
   "provides": {
-    "MessagePack::Class": "lib/MessagePack/Class.pm"
+    "MessagePack::Class": "lib/MessagePack/Class.rakumod"
   },
   "support": {
     "email": "jns+gh@gellyfish.co.uk",
@@ -30,7 +30,7 @@
   "source-url": "https://github.com/jonathanstowe/MessagePack-Class.git",
   "meta-version": "1",
   "license": "Artistic-2.0",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "depends": [
     "Data::MessagePack"
   ]
